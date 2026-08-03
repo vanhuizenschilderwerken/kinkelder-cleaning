@@ -1,0 +1,607 @@
+<!--
+  Header partial for a static website on Vercel.
+  Use on: home.html, over-ons.html, projecten.html, offerte-aanvragen.html
+  Replace the logo text, phone number and WhatsApp link with the final company details.
+-->
+
+<header
+  id="site-header"
+  class="site-header"
+  data-header
+  style="
+    --header-page-padding-desktop: 24px;
+    --header-page-padding-mobile: 12px;
+    --header-top-spacing-desktop: 18px;
+    --header-top-spacing-mobile: 10px;
+    --header-bg: #EEF6FA;
+    --header-bg-open: #FFFFFF;
+    --header-text: #151515;
+    --header-text-open: #151515;
+    --header-muted-open: rgba(21, 21, 21, 0.76);
+    --header-border: rgba(21, 21, 21, 0.16);
+    --header-accent: #00A3E0;
+    --header-accent-strong: #151515;
+    --header-accent-soft: rgba(0, 163, 224, 0.12);
+    --header-page-bg: #F8F8F8;
+    --header-radius: 999px;
+    --header-bar-height-desktop: 86px;
+    --header-bar-height-mobile: 58px;
+    --header-font: Inter, Arial, Helvetica, sans-serif;
+    --header-heading-font: Manrope, Arial, Helvetica, sans-serif;
+  "
+>
+  <div class="site-header__shell">
+    <div class="site-header__mobile-bar">
+      <a href="home.html" class="site-header__logo" aria-label="Naar home">
+        <span class="site-header__logo-mark">DK</span>
+        <span class="site-header__logo-text">De Kinkelder Cleaning</span>
+      </a>
+      <button class="site-header__mobile-toggle" type="button" aria-label="Menu openen" aria-expanded="false" data-mobile-menu-open>
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="site-header__desktop-row">
+      <a href="home.html" class="site-header__logo" aria-label="Naar home">
+        <span class="site-header__logo-mark">DK</span>
+        <span class="site-header__logo-text">De Kinkelder Cleaning</span>
+      </a>
+
+      <nav class="site-header__nav site-header__nav--desktop" aria-label="Hoofdmenu">
+        <a href="home.html" class="site-header__nav-link" data-nav-link>Home</a>
+        <a href="over-ons.html" class="site-header__nav-link" data-nav-link>Over Ons</a>
+        <a href="projecten.html" class="site-header__nav-link" data-nav-link>Projecten</a>
+        <a href="contact.html" class="site-header__nav-link" data-nav-link>Contact</a>
+      </nav>
+
+      <div class="site-header__contact-strip" aria-label="Direct contact">
+        <a href="mailto:info@dekinkeldercleaning.nl">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6.5h16v11H4z" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="m4.8 7.2 7.2 5.4 7.2-5.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span>Stuur ons een e-mail</span>
+        </a>
+        <a href="tel:+31612345678">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.1 4.4 9.2 4c.5-.1 1 .2 1.2.7l1 2.4c.2.4.1.9-.3 1.2L9.9 9.4c.8 1.7 2.1 3 3.7 3.8l1.2-1.2c.3-.3.8-.5 1.2-.3l2.4 1c.5.2.8.7.7 1.2l-.4 2.1c-.1.6-.6 1-1.2 1C11.1 17 6 11.9 6 5.6c0-.6.4-1.1 1.1-1.2Z" fill="currentColor"/></svg>
+          <span>Bel ons: +31 6 12345678</span>
+        </a>
+      </div>
+
+      <a class="site-header__action site-header__action--quote" href="offerte-aanvragen.html">
+        <span>Offerte aanvragen</span>
+        <span class="site-header__action-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" focusable="false">
+            <path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-header__drawer" aria-hidden="true" data-mobile-drawer>
+    <div class="site-header__drawer-top">
+      <a href="home.html" class="site-header__drawer-logo">
+        <span class="site-header__logo-mark">DK</span>
+        <span>De Kinkelder Cleaning</span>
+      </a>
+      <button class="site-header__drawer-close" type="button" aria-label="Menu sluiten" data-mobile-menu-close>
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M7 7l10 10M17 7 7 17" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+
+    <nav class="site-header__drawer-nav" aria-label="Mobiel menu">
+      <a href="home.html" data-nav-link><span>Home</span><svg class="site-header__chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m8 10 4 4 4-4" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <a href="over-ons.html" data-nav-link><span>Over Ons</span><svg class="site-header__chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m8 10 4 4 4-4" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <a href="projecten.html" data-nav-link><span>Projecten</span><svg class="site-header__chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m8 10 4 4 4-4" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <a href="contact.html" data-nav-link><span>Contact</span><svg class="site-header__chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m8 10 4 4 4-4" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    </nav>
+
+    <div class="site-header__drawer-contact">
+      <a href="mailto:info@dekinkeldercleaning.nl">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6.5h16v11H4z" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="m4.8 7.2 7.2 5.4 7.2-5.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span>Stuur ons een e-mail</span>
+      </a>
+      <a href="tel:+31612345678">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.1 4.4 9.2 4c.5-.1 1 .2 1.2.7l1 2.4c.2.4.1.9-.3 1.2L9.9 9.4c.8 1.7 2.1 3 3.7 3.8l1.2-1.2c.3-.3.8-.5 1.2-.3l2.4 1c.5.2.8.7.7 1.2l-.4 2.1c-.1.6-.6 1-1.2 1C11.1 17 6 11.9 6 5.6c0-.6.4-1.1 1.1-1.2Z" fill="currentColor"/></svg>
+        <span>Bel ons: +31 6 12345678</span>
+      </a>
+    </div>
+
+    <div class="site-header__drawer-card">
+      <strong>Gratis prijsinschatting?</strong>
+      <p>Stuur foto's via WhatsApp of vraag direct een vrijblijvende offerte aan.</p>
+      <a href="offerte-aanvragen.html">
+        <span>Offerte aanvragen</span>
+        <span aria-hidden="true">
+          <svg viewBox="0 0 24 24" focusable="false">
+            <path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<style>
+  /* ===== CSS BEGIN: header.liquid ===== */
+  .site-header,
+  .site-header * {
+    box-sizing: border-box;
+  }
+
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    background:
+      linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(238, 246, 250, 0.96)),
+      var(--header-bg);
+    color: var(--header-text);
+    font-family: var(--header-font);
+  }
+
+  .site-header a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .site-header button {
+    font: inherit;
+  }
+
+  .site-header__shell {
+    width: min(100%, 1440px);
+    margin: 0 auto;
+    padding: 20px 24px;
+  }
+
+  .site-header__desktop-row {
+    min-height: var(--header-bar-height-desktop);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: clamp(18px, 2vw, 34px);
+    padding: 10px 12px 10px 18px;
+    border: 1px solid rgba(21, 21, 21, 0.06);
+    border-radius: var(--header-radius);
+    background: rgba(255, 255, 255, 0.96);
+    box-shadow: 0 24px 70px rgba(18, 58, 91, 0.12);
+    backdrop-filter: blur(16px);
+  }
+
+  .site-header__mobile-bar {
+    display: none;
+  }
+
+  .site-header__logo {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    width: fit-content;
+    font-family: var(--header-heading-font);
+    font-weight: 900;
+    line-height: 0.9;
+    white-space: nowrap;
+  }
+
+  .site-header__desktop-row .site-header__logo {
+    flex: 0 0 auto;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .site-header__logo-mark {
+    width: 42px;
+    height: 42px;
+    display: inline-grid;
+    place-items: center;
+    border-radius: 9px 9px 9px 2px;
+    background: linear-gradient(155deg, #00A3E0 0%, #063A5A 52%, #151515 100%);
+    color: #fff;
+    font-size: 13px;
+    letter-spacing: 0.04em;
+  }
+
+  .site-header__logo-text {
+    font-size: clamp(17px, 1.45vw, 22px);
+    letter-spacing: -0.04em;
+  }
+
+  .site-header__contact-strip {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    gap: clamp(12px, 1.5vw, 22px);
+    font-size: 14px;
+    font-weight: 700;
+  }
+
+  .site-header__contact-strip a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .site-header__contact-strip svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  .site-header__nav--desktop {
+    flex: 1 1 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(14px, 1.7vw, 30px);
+    min-width: 280px;
+  }
+
+  .site-header__nav-link {
+    position: relative;
+    font-size: 15px;
+    line-height: 1;
+    font-weight: 700;
+    color: rgba(21, 21, 21, 0.76);
+    white-space: nowrap;
+    transition: color 0.2s ease;
+  }
+
+  .site-header__nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -10px;
+    height: 2px;
+    border-radius: 999px;
+    background: var(--header-accent);
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.2s ease;
+  }
+
+  .site-header__nav-link:hover,
+  .site-header__nav-link.is-active {
+    color: #ffffff;
+  }
+
+  .site-header__nav-link:hover::after,
+  .site-header__nav-link.is-active::after {
+    transform: scaleX(1);
+  }
+
+  .site-header__actions {
+    display: flex;
+    align-items: center;
+  }
+
+  .site-header__action {
+    min-height: 58px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    border-radius: 999px;
+    font-size: 15px;
+    font-weight: 900;
+    white-space: nowrap;
+  }
+
+  .site-header a.site-header__action--quote {
+    padding: 0 10px 0 24px;
+    background: var(--header-accent);
+    color: #fff;
+    box-shadow: 0 16px 30px rgba(0, 163, 224, 0.24);
+  }
+
+  #site-header .site-header__action--quote > span:first-child {
+    color: #fff !important;
+  }
+
+  .site-header__action-icon {
+    width: 44px;
+    height: 44px;
+    display: inline-grid;
+    place-items: center;
+    border-radius: 50%;
+    background: #fff;
+    color: #151515;
+    font-size: 20px;
+    line-height: 1;
+  }
+
+  .site-header__action-icon svg,
+  .site-header__drawer-card a svg {
+    width: 21px;
+    height: 21px;
+    display: block;
+  }
+
+  .site-header__mobile-toggle,
+  .site-header__drawer {
+    display: none;
+  }
+
+  body.is-menu-open {
+    overflow: hidden;
+  }
+
+  @media (max-width: 1180px) {
+    .site-header {
+      background: transparent;
+    }
+
+    .site-header__shell {
+      padding: 10px 12px;
+    }
+
+    .site-header__desktop-row {
+      display: none;
+    }
+
+    .site-header__mobile-bar {
+      min-height: var(--header-bar-height-mobile);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 10px 14px;
+      border: 1px solid rgba(21, 21, 21, 0.08);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.96);
+      box-shadow: 0 18px 44px rgba(18, 58, 91, 0.12);
+    }
+
+    .site-header__mobile-bar .site-header__logo {
+      flex-direction: row;
+      align-items: center;
+    }
+
+    .site-header__mobile-bar .site-header__logo-mark {
+      width: 34px;
+      height: 34px;
+      font-size: 11px;
+    }
+
+    .site-header__mobile-bar .site-header__logo-text {
+      font-size: 16px;
+      letter-spacing: -0.03em;
+    }
+
+    .site-header__mobile-toggle {
+      width: 44px;
+      height: 44px;
+      display: inline-grid;
+      place-items: center;
+      border: 0;
+      border-radius: 50%;
+      padding: 0;
+      background: #151515;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    .site-header__mobile-toggle svg {
+      width: 24px;
+      height: 24px;
+      display: block;
+    }
+
+    .site-header__drawer {
+      position: fixed;
+      inset: 0;
+      z-index: 1001;
+      display: flex;
+      flex-direction: column;
+      min-height: 100dvh;
+      overflow: auto;
+      padding: 22px 24px 28px;
+      background: var(--header-bg-open);
+      color: var(--header-text-open);
+      transform: translateX(104%);
+      transition: transform 0.28s ease;
+    }
+
+    .site-header.is-mobile-open .site-header__drawer {
+      transform: translateX(0);
+    }
+
+    .site-header__drawer-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 20px;
+      margin-bottom: 38px;
+    }
+
+    .site-header__drawer-logo {
+      display: inline-flex;
+      flex-direction: column;
+      gap: 8px;
+      font-family: var(--header-heading-font);
+      font-size: 28px;
+      line-height: 0.95;
+      font-weight: 900;
+      letter-spacing: -0.04em;
+    }
+
+    .site-header__drawer-logo .site-header__logo-mark {
+      width: 38px;
+      height: 38px;
+    }
+
+    .site-header__drawer-close {
+      width: 42px;
+      height: 42px;
+      border: 0;
+      padding: 0;
+      background: transparent;
+      color: #151515;
+      cursor: pointer;
+    }
+
+    .site-header__drawer-close svg {
+      display: block;
+      width: 34px;
+      height: 34px;
+    }
+
+    .site-header__drawer-nav {
+      display: grid;
+      gap: 0;
+      margin-bottom: 32px;
+    }
+
+    .site-header__drawer-nav a {
+      min-height: 62px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(21, 21, 21, 0.08);
+      color: rgba(21, 21, 21, 0.78);
+      font-size: 22px;
+      font-weight: 700;
+    }
+
+    .site-header__drawer-nav a.is-active {
+      color: #151515;
+    }
+
+    .site-header__chevron {
+      width: 24px;
+      height: 24px;
+      flex: 0 0 auto;
+      color: #151515;
+      transition: transform 0.2s ease;
+    }
+
+    .site-header__drawer-nav a.is-active .site-header__chevron {
+      transform: rotate(180deg);
+    }
+
+    .site-header__drawer-contact {
+      display: grid;
+      gap: 20px;
+      margin-bottom: 34px;
+    }
+
+    .site-header__drawer-contact a {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      color: rgba(21, 21, 21, 0.78);
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    .site-header__drawer-contact svg {
+      width: 28px;
+      height: 28px;
+      color: #151515;
+    }
+
+    .site-header__drawer-card {
+      margin-top: auto;
+      padding: 0;
+      color: var(--header-text-open);
+    }
+
+    .site-header__drawer-card strong,
+    .site-header__drawer-card p {
+      display: none;
+    }
+
+    .site-header__drawer-card a {
+      min-height: 74px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      width: min(100%, 340px);
+      padding: 0 12px 0 28px;
+      border-radius: 999px;
+      background: var(--header-accent);
+      color: #fff;
+      font-size: 19px;
+      font-weight: 900;
+      box-shadow: 0 18px 44px rgba(0, 163, 224, 0.2);
+    }
+
+    .site-header__drawer-card a span:last-child {
+      width: 54px;
+      height: 54px;
+      display: inline-grid;
+      place-items: center;
+      border-radius: 50%;
+      background: #fff;
+      color: #151515;
+      font-size: 25px;
+    }
+  }
+  /* ===== CSS END: header.liquid ===== */
+</style>
+
+<script>
+  (function () {
+    function initHeader() {
+      var header = document.querySelector('[data-header]');
+      if (!header || header.dataset.initialized === 'true') return;
+
+      header.dataset.initialized = 'true';
+
+      var openButton = header.querySelector('[data-mobile-menu-open]');
+      var closeButton = header.querySelector('[data-mobile-menu-close]');
+      var drawer = header.querySelector('[data-mobile-drawer]');
+      var links = header.querySelectorAll('[data-nav-link]');
+      var currentPath = window.location.pathname.split('/').pop() || 'home.html';
+
+      links.forEach(function (link) {
+        var href = link.getAttribute('href');
+        if (href === currentPath || (currentPath === 'index.html' && href === 'home.html')) {
+          link.classList.add('is-active');
+        }
+      });
+
+      function setMenu(open) {
+        header.classList.toggle('is-mobile-open', open);
+        document.body.classList.toggle('is-menu-open', open);
+        if (openButton) openButton.setAttribute('aria-expanded', open ? 'true' : 'false');
+        if (drawer) drawer.setAttribute('aria-hidden', open ? 'false' : 'true');
+      }
+
+      if (openButton) {
+        openButton.addEventListener('click', function () {
+          setMenu(true);
+        });
+      }
+
+      if (closeButton) {
+        closeButton.addEventListener('click', function () {
+          setMenu(false);
+        });
+      }
+
+      document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape') setMenu(false);
+      });
+
+      document.addEventListener('click', function (event) {
+        if (!header.classList.contains('is-mobile-open')) return;
+        if (header.contains(event.target)) return;
+        setMenu(false);
+      });
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initHeader);
+    } else {
+      initHeader();
+    }
+  })();
+</script>
+

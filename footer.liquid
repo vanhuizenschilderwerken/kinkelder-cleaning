@@ -1,0 +1,558 @@
+<!--
+  Footer partial for a static website on Vercel.
+  Includes footer navigation, policy links and contact/social links.
+-->
+
+<footer
+  id="site-footer"
+  class="site-footer"
+  data-footer
+  style="
+    --footer-bg: #EEF6FA;
+    --footer-text: #ffffff;
+    --footer-muted: rgba(21, 21, 21, 0.72);
+    --footer-border: rgba(21, 21, 21, 0.18);
+    --footer-card: #FFFFFF;
+    --footer-accent: #151515;
+    --footer-blue: #00A3E0;
+    --footer-accent-soft: #F8F8F8;
+    --footer-whatsapp: #25d366;
+    --footer-radius: 8px;
+    --footer-font: Inter, Arial, Helvetica, sans-serif;
+    --footer-heading-font: Manrope, Arial, Helvetica, sans-serif;
+  "
+>
+  <div class="site-footer__wrap">
+    <div class="site-footer__masthead">
+      <a href="home.html" class="site-footer__brand">
+        <span class="site-footer__brand-mark">DK</span>
+        <span>De Kinkelder Cleaning</span>
+      </a>
+
+      <div class="site-footer__mast-actions" aria-label="Footer contact">
+        <a href="mailto:info@dekinkeldercleaning.nl">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6.5h16v11H4z" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="m4.8 7.2 7.2 5.4 7.2-5.4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <span>Stuur ons een e-mail</span>
+        </a>
+        <a href="tel:+31612345678">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.1 4.4 9.2 4c.5-.1 1 .2 1.2.7l1 2.4c.2.4.1.9-.3 1.2L9.9 9.4c.8 1.7 2.1 3 3.7 3.8l1.2-1.2c.3-.3.8-.5 1.2-.3l2.4 1c.5.2.8.7.7 1.2l-.4 2.1c-.1.6-.6 1-1.2 1C11.1 17 6 11.9 6 5.6c0-.6.4-1.1 1.1-1.2Z" fill="currentColor"/></svg>
+          <span>Bel ons: +31 6 12345678</span>
+        </a>
+        <a class="site-footer__quote" href="offerte-aanvragen.html">
+          <span>Offerte aanvragen</span>
+          <span aria-hidden="true">
+            <svg viewBox="0 0 24 24" focusable="false">
+              <path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+        </a>
+      </div>
+    </div>
+
+  <div class="site-footer__top">
+    <div class="site-footer__brand-block">
+      <h2>Professionele buitenreiniging</h2>
+      <p>Specialist in zonnepaneel reiniging, glasbewassing, dakkapel reiniging, boeireiniging, gevelbekleding en houtwerk reiniging.</p>
+      <div class="site-footer__trust">
+        <span>Vrijblijvende offerte</span>
+        <span>Reactie binnen 24 uur</span>
+        <span>Particulier en zakelijk</span>
+      </div>
+    </div>
+
+    <div class="site-footer__menus">
+      <div class="site-footer__menu-block">
+        <button class="site-footer__accordion-button" type="button" aria-expanded="false">
+          <span>Menu</span>
+          <svg class="site-footer__accordion-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="m8 10 4 4 4-4" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <div class="site-footer__accordion-content">
+          <h3>Menu</h3>
+          <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="over-ons.html">Over Ons</a></li>
+            <li><a href="projecten.html">Projecten</a></li>
+            <li><a href="offerte-aanvragen.html">Offerte aanvragen</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="site-footer__menu-block">
+        <button class="site-footer__accordion-button" type="button" aria-expanded="false">
+          <span>Bedrijfsbeleid</span>
+          <svg class="site-footer__accordion-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="m8 10 4 4 4-4" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <div class="site-footer__accordion-content">
+          <h3>Bedrijfsbeleid</h3>
+          <ul>
+            <li><a href="algemene-voorwaarden.html">Algemene voorwaarden</a></li>
+            <li><a href="privacybeleid.html">Privacybeleid</a></li>
+            <li><a href="cookiebeleid.html">Cookiebeleid</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="site-footer__contact">
+      <h2>Contact</h2>
+      <p>Contact opnemen</p>
+      <div class="site-footer__contact-links">
+        <a href="tel:+31612345678">+31 6 12345678</a>
+        <a href="mailto:info@dekinkeldercleaning.nl">info@dekinkeldercleaning.nl</a>
+      </div>
+      <div class="site-footer__socials" aria-label="Social media">
+        <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/></svg>
+        </a>
+        <a href="https://www.tiktok.com/" target="_blank" rel="noopener" aria-label="TikTok">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.2 2.5c.3 2.4 1.7 3.9 4.1 4.1v3.2c-1.4.1-2.7-.3-4-1.1v6.1c0 3.1-1.9 5.8-5.7 6.3-3.4.4-6.3-1.7-6.8-4.9-.6-3.7 2.3-6.7 6-6.5.3 0 .6.1.9.1v3.4c-.3-.1-.6-.2-1-.2-1.6 0-2.8 1.3-2.5 3 .2 1.2 1.2 2.1 2.5 2.1 1.5 0 2.6-1 2.6-2.8V2.5h3.9z" fill="currentColor"/></svg>
+        </a>
+        <a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.2 8.2V6.7c0-.7.4-1.1 1.2-1.1h1.8V2.5c-.3 0-1.4-.1-2.7-.1-2.7 0-4.5 1.6-4.5 4.7v1.1H7v3.5h3v9h3.7v-9h3l.5-3.5h-3z" fill="currentColor"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="site-footer__bottom">
+    <span>&copy; <span data-current-year></span> De Kinkelder Cleaning. Alle rechten voorbehouden.</span>
+    <nav aria-label="Juridische footer links">
+      <a href="privacybeleid.html">Privacybeleid</a>
+      <a href="cookiebeleid.html">Cookiebeleid</a>
+      <a href="algemene-voorwaarden.html">Algemene voorwaarden</a>
+    </nav>
+  </div>
+  </div>
+</footer>
+
+<style>
+  /* ===== CSS BEGIN: footer.liquid ===== */
+  .site-footer,
+  .site-footer * {
+    box-sizing: border-box;
+  }
+
+  .site-footer {
+    margin-top: 80px;
+    overflow: hidden;
+    background: var(--footer-bg);
+    color: var(--footer-text);
+    font-family: var(--footer-font);
+  }
+
+  .site-footer a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.2s ease, opacity 0.2s ease;
+  }
+
+  .site-footer a:hover {
+    color: var(--footer-whatsapp);
+  }
+
+.site-footer__wrap {
+  width: min(100%, 1320px);
+  margin: 0 auto;
+  padding: 54px 24px 0;
+}
+
+  .site-footer__masthead {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 40px;
+    padding-bottom: 38px;
+    border-bottom: 1px solid var(--footer-border);
+  }
+
+  .site-footer__brand {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 8px;
+    width: fit-content;
+    color: var(--footer-text);
+    font-family: var(--footer-heading-font);
+    font-size: clamp(26px, 2.4vw, 38px);
+    line-height: 0.92;
+    font-weight: 900;
+    letter-spacing: -0.04em;
+  }
+
+  .site-footer__brand-mark {
+    width: 42px;
+    height: 42px;
+    display: inline-grid;
+    place-items: center;
+    border-radius: 9px 9px 9px 2px;
+    background: linear-gradient(155deg, var(--footer-blue) 0%, #063A5A 52%, #151515 100%);
+    color: #fff;
+    font-size: 13px;
+    letter-spacing: 0.04em;
+  }
+
+  .site-footer__mast-actions {
+    justify-self: end;
+    display: flex;
+    align-items: center;
+    gap: clamp(14px, 2vw, 26px);
+    font-size: 15px;
+    font-weight: 700;
+  }
+
+  .site-footer__mast-actions > a:not(.site-footer__quote) {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    color: var(--footer-text);
+  }
+
+  .site-footer__mast-actions svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .site-footer a.site-footer__quote {
+    min-height: 58px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    padding: 0 10px 0 24px;
+    border-radius: 999px;
+    background: var(--footer-blue);
+    color: #fff;
+    font-weight: 900;
+    white-space: nowrap;
+    box-shadow: 0 16px 30px rgba(0, 163, 224, 0.24);
+  }
+
+  #site-footer .site-footer__quote > span:first-child {
+    color: #fff !important;
+  }
+
+  .site-footer__quote span:last-child {
+    width: 44px;
+    height: 44px;
+    display: inline-grid;
+    place-items: center;
+    border-radius: 50%;
+    background: #fff;
+    color: #151515;
+    font-size: 20px;
+  }
+
+  .site-footer__quote svg {
+    width: 21px;
+    height: 21px;
+    display: block;
+  }
+
+  .site-footer__top {
+    display: grid;
+    grid-template-columns: 1.05fr 1fr 0.95fr;
+    gap: clamp(34px, 5vw, 78px);
+    padding: 62px 0 56px;
+  }
+
+  .site-footer__brand-block h2 {
+    margin: 0 0 22px;
+    font-family: var(--footer-heading-font);
+    font-size: 21px;
+    line-height: 1.12;
+    font-weight: 900;
+    letter-spacing: -0.03em;
+  }
+
+  .site-footer__brand-block p,
+  .site-footer__contact p {
+    max-width: 430px;
+    margin: 0 0 22px;
+    color: var(--footer-muted);
+    font-size: 17px;
+    line-height: 1.5;
+  }
+
+  .site-footer__trust {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .site-footer__trust span {
+    display: inline-flex;
+    padding: 8px 10px;
+    border: 1px solid rgba(21, 21, 21, 0.1);
+    border-radius: 999px;
+    background: #fff;
+    color: var(--footer-muted);
+    font-size: 12px;
+    font-weight: 800;
+  }
+
+  .site-footer__menus {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 34px;
+  }
+
+  .site-footer__menu-block h3,
+  .site-footer__contact h2 {
+    margin: 0 0 18px;
+    color: var(--footer-text);
+    font-size: 16px;
+    line-height: 1.2;
+    font-weight: 900;
+  }
+
+  .site-footer__menu-block ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .site-footer__menu-block li {
+    margin: 0 0 12px;
+  }
+
+  .site-footer__menu-block a,
+  .site-footer__contact-links a {
+    color: var(--footer-muted);
+    font-size: 15px;
+    line-height: 1.35;
+    font-weight: 700;
+  }
+
+  .site-footer__contact {
+    padding: 28px;
+    border-radius: var(--footer-radius);
+    background: var(--footer-card);
+    box-shadow: 0 18px 44px rgba(18, 58, 91, 0.08);
+  }
+
+  .site-footer__contact-links {
+    display: grid;
+    gap: 12px;
+    margin-bottom: 24px;
+  }
+
+  .site-footer__socials {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+  }
+
+  .site-footer__socials a {
+    width: 42px;
+    height: 42px;
+    display: inline-grid;
+    place-items: center;
+    border: 1px solid var(--footer-border);
+    border-radius: 999px;
+    color: var(--footer-text);
+  }
+
+  .site-footer__socials svg {
+    width: 21px;
+    height: 21px;
+    display: block;
+  }
+
+  .site-footer__bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    margin: 0 -24px;
+    padding: 24px;
+    background: rgba(255, 255, 255, 0.62);
+    color: var(--footer-muted);
+    font-size: 14px;
+    line-height: 1.4;
+  }
+
+  .site-footer__bottom nav {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+  }
+
+  .site-footer__accordion-button {
+    display: none;
+  }
+
+  @media (max-width: 980px) {
+    .site-footer__wrap {
+      padding: 44px 28px 0;
+    }
+
+    .site-footer__masthead {
+      grid-template-columns: 1fr;
+      gap: 28px;
+    }
+
+    .site-footer__mast-actions {
+      justify-self: stretch;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .site-footer__top {
+      grid-template-columns: 1fr;
+      padding: 46px 0 42px;
+    }
+
+    .site-footer__menus {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .site-footer__bottom {
+      margin: 0 -28px;
+      padding: 22px 28px;
+    }
+  }
+
+  @media (max-width: 720px) {
+    .site-footer__top {
+      gap: 0;
+      padding: 34px 0 28px;
+    }
+
+    .site-footer__wrap {
+      padding: 34px 18px 0;
+    }
+
+    .site-footer__masthead {
+      padding-bottom: 28px;
+    }
+
+    .site-footer__mast-actions {
+      display: grid;
+      justify-content: stretch;
+    }
+
+    .site-footer__quote {
+      width: 100%;
+      justify-content: space-between;
+    }
+
+    .site-footer__brand-block {
+      margin-bottom: 28px;
+    }
+
+    .site-footer__menus {
+      display: block;
+      margin: 0 -18px 32px;
+      border-top: 1px solid var(--footer-border);
+    }
+
+    .site-footer__menu-block {
+      border-bottom: 1px solid var(--footer-border);
+    }
+
+    .site-footer__accordion-button {
+      width: 100%;
+      min-height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border: 0;
+      padding: 0 18px;
+      background: transparent;
+      color: var(--footer-text);
+      font: inherit;
+      font-size: 15px;
+      font-weight: 900;
+      cursor: pointer;
+    }
+
+    .site-footer__accordion-icon {
+      width: 22px;
+      height: 22px;
+      display: block;
+      transition: transform 0.24s ease;
+    }
+
+    .site-footer__accordion-button[aria-expanded="true"] .site-footer__accordion-icon {
+      transform: rotate(180deg);
+    }
+
+    .site-footer__accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.28s ease;
+    }
+
+    .site-footer__accordion-content h3 {
+      display: none;
+    }
+
+    .site-footer__accordion-content ul {
+      padding: 0 18px 16px;
+    }
+
+    .site-footer__contact {
+      padding: 20px;
+    }
+
+    .site-footer__bottom {
+      display: grid;
+      margin: 0 -18px;
+      padding: 20px 18px;
+    }
+
+    .site-footer__bottom nav {
+      flex-wrap: wrap;
+      gap: 12px 18px;
+    }
+
+  }
+  /* ===== CSS END: footer.liquid ===== */
+</style>
+
+<script>
+  (function () {
+    function initFooter() {
+      var footer = document.querySelector('[data-footer]');
+      if (!footer || footer.dataset.initialized === 'true') return;
+
+      footer.dataset.initialized = 'true';
+
+      var year = footer.querySelector('[data-current-year]');
+      var buttons = footer.querySelectorAll('.site-footer__accordion-button');
+
+      if (year) year.textContent = new Date().getFullYear();
+
+      buttons.forEach(function (button) {
+        button.addEventListener('click', function () {
+          var expanded = button.getAttribute('aria-expanded') === 'true';
+          var content = button.nextElementSibling;
+
+          button.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+          if (!content) return;
+          content.style.maxHeight = expanded ? null : content.scrollHeight + 'px';
+        });
+      });
+
+      window.addEventListener('resize', function () {
+        if (window.innerWidth > 720) {
+          buttons.forEach(function (button) {
+            var content = button.nextElementSibling;
+            button.setAttribute('aria-expanded', 'false');
+            if (content) content.style.maxHeight = null;
+          });
+        }
+      });
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initFooter);
+    } else {
+      initFooter();
+    }
+  })();
+</script>
+

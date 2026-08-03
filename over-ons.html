@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Maak kennis met De Kinkelder Cleaning: professionele buitenreiniging met heldere afspraken, persoonlijke service en aandacht voor ieder detail.">
+  <title>Over ons | De Kinkelder Cleaning</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <style>
+    .about-circle-media {
+      --circle-border: clamp(14px, 2.2vw, 22px);
+      position: relative;
+      overflow: hidden !important;
+      border-radius: 50% !important;
+      isolation: isolate;
+      background:
+        radial-gradient(circle at 30% 24%, rgba(255, 255, 255, 0.20) 0%, rgba(255, 255, 255, 0) 34%),
+        linear-gradient(145deg, #1db4ee 0%, #0f8cc7 38%, #0c638f 68%, #073f63 100%);
+      box-shadow: 0 24px 58px rgba(6, 39, 63, 0.18);
+    }
+
+    .about-circle-media__image {
+      position: absolute;
+      top: var(--circle-border);
+      right: var(--circle-border);
+      bottom: var(--circle-border);
+      left: var(--circle-border);
+      width: calc(100% - (var(--circle-border) * 2)) !important;
+      height: calc(100% - (var(--circle-border) * 2)) !important;
+      max-width: none !important;
+      display: block;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center;
+      z-index: 1;
+    }
+
+    /* Dunne binnenring zoals in het oorspronkelijke ontwerp, maar iets verder naar binnen zodat de blauwe rand zichtbaar blijft. */
+    .about-circle-media::after {
+      content: "";
+      position: absolute;
+      inset: calc(var(--circle-border) + clamp(10px, 1.7vw, 16px));
+      z-index: 2;
+      border: 1px solid rgba(255, 255, 255, 0.26);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    /* Subtiele glans over het blauwe randje voor hetzelfde luxe effect als eerder. */
+    .about-circle-media::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      background: radial-gradient(circle at 28% 18%, rgba(255, 255, 255, 0.18) 0%, rgba(255, 255, 255, 0.06) 14%, rgba(255, 255, 255, 0) 36%);
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    /* Zorgt dat badges en zwevende labels altijd boven de foto blijven. */
+    .about-hero__visual > :not(.about-hero__shape),
+    .about-story__badge {
+      position: absolute;
+      z-index: 4;
+    }
+  </style>
+  <script src="/index.js" defer></script>
+</head>
+<body class="about-page">
+ <header class="site-header" data-site-header="">
+<div class="site-header__shell">
+<a aria-label="De Kinkelder Cleaning home" class="header-brand" href="/">
+        De Kinkelder Cleaning
+      </a>
+<button aria-controls="site-navigation" aria-expanded="false" aria-label="Menu openen" class="menu-toggle" data-menu-toggle="" type="button">
+<span class="menu-toggle__line"></span>
+<span class="menu-toggle__line"></span>
+<span class="menu-toggle__line"></span>
+</button>
+<nav aria-hidden="false" aria-label="Hoofdnavigatie" class="site-nav" data-site-nav="" id="site-navigation">
+<ul class="site-nav__links">
+<li><a class="site-nav__link" href="/">Home</a></li>
+<li><a class="site-nav__link" href="/diensten/">Diensten</a></li>
+<li><a class="site-nav__link" href="/over-ons/">Over ons</a></li>
+</ul>
+<a aria-current="page" class="button button--quote site-nav__cta is-current" href="/offerte-aanvragen/">
+<span>Offerte aanvragen</span>
+<span aria-hidden="true" class="button__icon">
+<svg viewbox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2"></path></svg>
+</span>
+</a>
+</nav>
+</div>
+</header>
+
+  <main id="main-content">
+    <section class="about-hero" aria-labelledby="about-hero-title">
+      <div class="about-container about-hero__grid">
+        <div class="about-hero__content">
+          <p class="about-eyebrow">Over De Kinkelder Cleaning</p>
+          <h1 id="about-hero-title">
+            Schoon resultaat met
+            <span>persoonlijke aandacht.</span>
+          </h1>
+          <p class="about-hero__lead">
+            Wij verzorgen professionele buitenreiniging voor woningen, bedrijfspanden,
+            winkels en vastgoedbeheer in Twente en omgeving. Met heldere afspraken,
+            zorgvuldig werk en een resultaat waar u direct verschil aan ziet.
+          </p>
+
+          <div class="about-hero__actions">
+            <a class="button button--quote" href="/offerte-aanvragen/">
+              <span>Offerte aanvragen</span>
+              <span class="button__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" focusable="false">
+                  <path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </a>
+          </div>
+
+          <ul class="about-hero__checks" aria-label="Onze kenmerken">
+            <li>Vrijblijvende prijsinschatting</li>
+            <li>Particulier en zakelijk</li>
+            <li>Reactie binnen 24 uur</li>
+          </ul>
+        </div>
+
+        <div class="about-hero__visual" aria-label="De Kinkelder Cleaning aan het werk">
+          <div class="about-hero__shape about-circle-media">
+            <img
+              class="about-circle-media__image"
+              src="/Schoonmaakdienst buitenzijde van ramen.png"
+              alt="Professionele buitenreiniging door De Kinkelder Cleaning"
+              width="900"
+              height="900"
+              loading="eager"
+              fetchpriority="high"
+              decoding="async"
+            >
+          </div>
+
+          <div class="about-floating-card about-floating-card--area">
+            <span class="about-floating-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 21s6-5.1 6-11a6 6 0 1 0-12 0c0 5.9 6 11 6 11Z" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="10" r="2" fill="currentColor"/></svg>
+            </span>
+            <span><small>Werkgebied</small>Twente en omgeving</span>
+          </div>
+
+          <div class="about-floating-card about-floating-card--service">
+            <span class="about-floating-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M5 12.5 9.2 17 19 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <span><small>Onze aanpak</small>Zorgvuldig en duidelijk</span>
+          </div>
+
+          <div class="about-hero__tag about-hero__tag--one">Glasbewassing</div>
+          <div class="about-hero__tag about-hero__tag--two">Gevelreiniging</div>
+          <div class="about-hero__tag about-hero__tag--three">Zonnepanelen</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-marquee" aria-label="Kenmerken van onze dienstverlening">
+      <div class="about-marquee__viewport">
+        <div class="about-marquee__track">
+          <span>Vrijblijvende offerte</span><i aria-hidden="true"></i>
+          <span>WhatsApp-contact</span><i aria-hidden="true"></i>
+          <span>Particulier</span><i aria-hidden="true"></i>
+          <span>Zakelijk</span><i aria-hidden="true"></i>
+          <span>Twente en omgeving</span><i aria-hidden="true"></i>
+          <span aria-hidden="true">Vrijblijvende offerte</span><i aria-hidden="true"></i>
+          <span aria-hidden="true">WhatsApp-contact</span><i aria-hidden="true"></i>
+          <span aria-hidden="true">Particulier</span><i aria-hidden="true"></i>
+          <span aria-hidden="true">Zakelijk</span><i aria-hidden="true"></i>
+          <span aria-hidden="true">Twente en omgeving</span><i aria-hidden="true"></i>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-values about-section" aria-labelledby="about-values-title">
+      <div class="about-container">
+        <div class="about-section-head">
+          <div>
+            <p class="about-eyebrow">Waar wij voor staan</p>
+            <h2 id="about-values-title">Service die u merkt.<br>Resultaat dat u ziet.</h2>
+          </div>
+        </div>
+
+        <div class="about-value-grid">
+          <article class="about-value-card">
+            <div class="about-value-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M4 12.5 8.2 17 20 5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3>Heldere afspraken</h3>
+            <p>U weet vooraf wat we doen, wanneer we komen en wat u van het resultaat mag verwachten.</p>
+          </article>
+
+          <article class="about-value-card">
+            <div class="about-value-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 3 4 7v5c0 5 3.4 8 8 9 4.6-1 8-4 8-9V7l-8-4Z" fill="none" stroke="currentColor" stroke-width="2"/><path d="m9 12 2 2 4-4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3>Zorgvuldig uitgevoerd</h3>
+            <p>We kiezen een passende reinigingsmethode en behandelen materialen met aandacht voor detail.</p>
+          </article>
+
+          <article class="about-value-card">
+            <div class="about-value-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Z" fill="none" stroke="currentColor" stroke-width="2"/><path d="M8.5 14.5s1.3 1.7 3.5 1.7 3.5-1.7 3.5-1.7M9 9.5h.01M15 9.5h.01" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </div>
+            <h3>Persoonlijk contact</h3>
+            <p>Korte lijnen, snel antwoord en één duidelijk aanspreekpunt tijdens de volledige opdracht.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-story about-section" aria-labelledby="about-story-title">
+      <div class="about-container about-story__grid">
+        <div class="about-story__visual">
+          <div class="about-story__circle about-circle-media">
+            <img
+              class="about-circle-media__image"
+              src="/Reiniging van buitenramen.JPG"
+              alt="De Kinkelder Cleaning zorgvuldig aan het werk"
+              width="900"
+              height="900"
+              loading="lazy"
+              decoding="async"
+            >
+          </div>
+          <div class="about-story__badge">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5 9.2 17 19 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Netjes werken<br><strong>staat voorop</strong></span>
+          </div>
+        </div>
+
+        <div class="about-story__content">
+          <p class="about-eyebrow">Wie zijn wij?</p>
+          <h2 id="about-story-title">Betrokken bij iedere klus, groot of klein.</h2>
+          <p>
+            De Kinkelder Cleaning helpt klanten met het professioneel reinigen van
+            de buitenzijde van hun woning of pand. Van glas en zonnepanelen tot
+            dakkapellen, boeidelen, gevelbekleding en houtwerk.
+          </p>
+          <p>
+            We kijken naar de situatie, bespreken de mogelijkheden en kiezen een
+            aanpak die past bij de ondergrond. Zo blijft het contact persoonlijk
+            en de uitvoering overzichtelijk.
+          </p>
+
+          <div class="about-story__stats" aria-label="Kerngegevens">
+            <div><strong>6</strong><span>specialistische diensten</span></div>
+            <div><strong>24u</strong><span>reactie op uw aanvraag</span></div>
+            <div><strong>Twente</strong><span>en directe omgeving</span></div>
+          </div>
+
+          <a class="button button--quote about-story__button" href="/contact/">
+            <span>Maak kennis</span>
+            <span class="button__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" focusable="false"><path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    
+
+    <section class="about-services about-section" aria-labelledby="about-services-title">
+      <div class="about-container about-services__grid">
+        <div class="about-services__content">
+          <p class="about-eyebrow">Waarmee wij helpen</p>
+          <h2 id="about-services-title">Een vertrouwd adres voor buitenreiniging.</h2>
+          <p>
+            Onze diensten zijn geschikt voor particuliere en zakelijke opdrachtgevers.
+            Ook combinaties zijn mogelijk, zodat meerdere onderdelen in één afspraak
+            kunnen worden aangepakt.
+          </p>
+          <a class="button button--secondary" href="/diensten/">Alle diensten bekijken</a>
+        </div>
+
+        <div class="about-service-list">
+          <a href="/diensten/#zonnepanelen"><span>01</span>Zonnepaneelbewassing<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a href="/diensten/#glasbewassing"><span>02</span>Glasbewassing<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a href="/diensten/#dakkapel"><span>03</span>Dakkapelreiniging<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a href="/diensten/#boeien"><span>04</span>Boeireiniging<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a href="/diensten/#gevelbekleding"><span>05</span>Gevelbekleding<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a href="/diensten/#houtwerk"><span>06</span>Houtwerkreiniging<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+<footer class="site-footer" id="contact">
+    <div class="site-footer__main">
+      <div class="section-inner">
+        <div class="site-footer__header">
+          <a class="site-brand site-brand--footer" href="/">
+            <span class="site-brand__name">De Kinkelder Cleaning</span>
+          </a>
+          <div class="site-footer__top-actions">
+            <a href="mailto:info@dekinkeldercleaning.nl">Stuur ons een e-mail</a>
+            <a href="tel:+31612345678">Bel ons: +31 6 12345678</a>
+            <a class="button button--quote" href="/offerte-aanvragen/">
+              <span>Offerte aanvragen</span>
+              <span class="button__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+              </span>
+            </a>
+          </div>
+        </div>
+
+        <div class="site-footer__grid">
+          <section class="site-footer__column site-footer__intro">
+            <h2>Professionele buitenreiniging</h2>
+            <p>Specialist in zonnepaneelreiniging, glasbewassing, dakkapelreiniging, boeireiniging, gevelbekleding en houtwerkreiniging.</p>
+            <div class="site-footer__badges" aria-label="Kenmerken">
+              <span>Vrijblijvende offerte</span>
+              <span>Reactie binnen 24 uur</span>
+              <span>Particulier en zakelijk</span>
+            </div>
+          </section>
+
+          <nav class="site-footer__column" aria-label="Footermenu">
+            <h2>Menu</h2>
+            <ul class="site-footer__links">
+              <li><a href="/">Home</a></li>
+              <li><a href="/over-ons/">Over ons</a></li>
+              <li><a href="/diensten/">Diensten</a></li>
+              <li><a href="/offerte-aanvragen/">Offerte aanvragen</a></li>
+            </ul>
+          </nav>
+
+          <nav class="site-footer__column" aria-label="Bedrijfsbeleid">
+            <h2>Bedrijfsbeleid</h2>
+            <ul class="site-footer__links">
+              <li><a href="/algemene-voorwaarden/">Algemene voorwaarden</a></li>
+              <li><a href="/privacybeleid/">Privacybeleid</a></li>
+              <li><a href="/cookiebeleid/">Cookiebeleid</a></li>
+            </ul>
+          </nav>
+
+          <section class="site-footer__contact-card">
+            <h2>Contact</h2>
+            <p>Contact opnemen</p>
+            <div class="site-footer__contact-details">
+              <a href="tel:+31612345678">+31 6 12345678</a>
+              <a href="mailto:info@dekinkeldercleaning.nl">info@dekinkeldercleaning.nl</a>
+            </div>
+            <div class="site-footer__socials" aria-label="Social media">
+              <a href="https://www.instagram.com/jouwgebruikersnaam/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                <svg class="social-icon social-icon--instagram" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="4.5" fill="none" stroke="currentColor" stroke-width="1.7"></rect><circle cx="12" cy="12" r="3.6" fill="none" stroke="currentColor" stroke-width="1.7"></circle><circle cx="17.2" cy="6.8" r="1" fill="currentColor"></circle></svg>
+              </a>
+              <a href="https://www.tiktok.com/@jouwgebruikersnaam" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+                <svg class="social-icon social-icon--tiktok" viewBox="0 0 24 24" aria-hidden="true"><path d="M15.4 4v10.2a4.6 4.6 0 1 1-4-4.6v2.8a1.9 1.9 0 1 0 1.2 1.8V4h2.8c.2 1.8 1.3 3 3.1 3.4v2.8a7.1 7.1 0 0 1-3.1-1.1V4z" fill="currentColor"></path></svg>
+              </a>
+              <a href="https://www.facebook.com/jouwgebruikersnaam" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                <svg class="social-icon social-icon--facebook" viewBox="0 0 24 24" aria-hidden="true"><path d="M13.8 20v-7h2.4l.4-2.8h-2.8V8.4c0-.8.2-1.4 1.4-1.4h1.5V4.5c-.3 0-1.2-.1-2.2-.1-2.2 0-3.7 1.3-3.7 3.8v2H8.3V13h2.5v7h3z" fill="currentColor"></path></svg>
+              </a>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+
+    <div class="site-footer__bottom">
+      <div class="section-inner site-footer__bottom-inner">
+        <p>&copy; <span data-current-year>2026</span> De Kinkelder Cleaning. Alle rechten voorbehouden.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

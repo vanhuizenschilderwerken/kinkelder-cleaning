@@ -1,0 +1,16 @@
+DirectoryIndex index.html
+
+RewriteEngine On
+
+Redirect 301 /home.html /
+Redirect 301 /diensten.html /diensten/
+Redirect 301 /over-ons.html /over-ons/
+Redirect 301 /offerte-aanvragen.html /offerte-aanvragen/
+Redirect 301 /algemene-voorwaarden.html /algemene-voorwaarden/
+Redirect 301 /privacybeleid.html /privacybeleid/
+Redirect 301 /cookiebeleid.html /cookiebeleid/
+
+# Bestaande mappen standaard met een afsluitende slash openen.
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^(.+[^/])$ %{REQUEST_URI}/ [R=301,L]
+

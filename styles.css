@@ -9678,3 +9678,117 @@ body.contact-page .contact-trust-strip__inner:not(.is-marquee-ready) {
   }
 }
 
+/* =========================================================
+   DEFINITIEVE FIX — MOBIELE HEADERLOGO / LAATSTE "G"
+   Overschrijft eerdere mobiele regels die de merknaam afsnijden.
+   ========================================================= */
+
+@media (max-width: 900px) {
+  /*
+   * De eerste gridkolom behoudt voldoende ruimte voor de merknaam.
+   * De menuknop blijft rechts op een vaste breedte staan.
+   */
+  .site-header__shell {
+    grid-template-columns: minmax(0, 1fr) 82px !important;
+    padding-left: 18px !important;
+  }
+
+  /*
+   * In de eerdere CSS stond overflow:hidden op .header-brand.
+   * Daardoor werd de uitstekende rechterzijde van de letter G afgesneden.
+   */
+  .header-brand,
+  .site-header__mobile-bar .site-header__logo {
+    min-width: 0 !important;
+    width: max-content !important;
+    max-width: 100% !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    overflow: visible !important;
+    text-overflow: clip !important;
+    white-space: nowrap !important;
+    padding-right: 0.35em !important;
+    color: var(--dk-ink) !important;
+    font-family: var(--dk-heading) !important;
+    font-size: clamp(17px, 4.9vw, 22px) !important;
+    font-weight: 900 !important;
+    line-height: 1.24 !important;
+    letter-spacing: -0.025em !important;
+    font-kerning: normal !important;
+    text-rendering: geometricPrecision;
+  }
+
+  /*
+   * Ondersteunt ook de header.liquid-versie met een apart tekst-element.
+   */
+  .site-header__logo-text,
+  .site-header__mobile-bar .site-header__logo-text {
+    min-width: 0 !important;
+    width: max-content !important;
+    max-width: 100% !important;
+    display: block !important;
+    overflow: visible !important;
+    text-overflow: clip !important;
+    white-space: nowrap !important;
+    padding-right: 0.35em !important;
+    font-family: var(--dk-heading) !important;
+    font-size: inherit !important;
+    font-weight: 900 !important;
+    line-height: 1.24 !important;
+    letter-spacing: -0.025em !important;
+  }
+
+  .menu-toggle,
+  .site-header__mobile-toggle {
+    width: 82px !important;
+    min-width: 82px !important;
+  }
+}
+
+@media (max-width: 420px) {
+  .site-header__shell {
+    grid-template-columns: minmax(0, 1fr) 72px !important;
+    padding-left: 14px !important;
+  }
+
+  .header-brand,
+  .site-header__mobile-bar .site-header__logo {
+    padding-right: 0.32em !important;
+    font-size: clamp(16px, 4.75vw, 19px) !important;
+    line-height: 1.25 !important;
+    letter-spacing: -0.02em !important;
+  }
+
+  .site-header__logo-text,
+  .site-header__mobile-bar .site-header__logo-text {
+    padding-right: 0.32em !important;
+    line-height: 1.25 !important;
+    letter-spacing: -0.02em !important;
+  }
+
+  .menu-toggle,
+  .site-header__mobile-toggle {
+    width: 72px !important;
+    min-width: 72px !important;
+  }
+}
+
+@media (max-width: 360px) {
+  .site-header__shell {
+    grid-template-columns: minmax(0, 1fr) 66px !important;
+    padding-left: 12px !important;
+  }
+
+  .header-brand,
+  .site-header__mobile-bar .site-header__logo {
+    font-size: 15.5px !important;
+    letter-spacing: -0.015em !important;
+  }
+
+  .menu-toggle,
+  .site-header__mobile-toggle {
+    width: 66px !important;
+    min-width: 66px !important;
+  }
+}
+

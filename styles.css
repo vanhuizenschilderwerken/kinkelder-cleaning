@@ -9679,116 +9679,73 @@ body.contact-page .contact-trust-strip__inner:not(.is-marquee-ready) {
 }
 
 /* =========================================================
-   DEFINITIEVE FIX — MOBIELE HEADERLOGO / LAATSTE "G"
-   Overschrijft eerdere mobiele regels die de merknaam afsnijden.
+   DEFINITIEVE MOBIELE HEADERFIX
+   De eerdere fout zat niet in de beschikbare breedte, maar in
+   de Manrope-vorm van de kleine letter "g" op mobiel.
+   Alleen de mobiele merknaam gebruikt daarom een duidelijkere
+   systeemletter met een normale, volledig zichtbare g.
    ========================================================= */
 
 @media (max-width: 900px) {
-  /*
-   * De eerste gridkolom behoudt voldoende ruimte voor de merknaam.
-   * De menuknop blijft rechts op een vaste breedte staan.
-   */
   .site-header__shell {
-    grid-template-columns: minmax(0, 1fr) 82px !important;
-    padding-left: 18px !important;
+    grid-template-columns: minmax(0, 1fr) 88px;
+    padding-left: 24px;
   }
 
-  /*
-   * In de eerdere CSS stond overflow:hidden op .header-brand.
-   * Daardoor werd de uitstekende rechterzijde van de letter G afgesneden.
-   */
-  .header-brand,
-  .site-header__mobile-bar .site-header__logo {
-    min-width: 0 !important;
-    width: max-content !important;
-    max-width: 100% !important;
-    display: inline-flex !important;
-    align-items: center !important;
-    overflow: visible !important;
-    text-overflow: clip !important;
-    white-space: nowrap !important;
-    padding-right: 0.35em !important;
-    color: var(--dk-ink) !important;
-    font-family: var(--dk-heading) !important;
-    font-size: clamp(17px, 4.9vw, 22px) !important;
-    font-weight: 900 !important;
-    line-height: 1.24 !important;
-    letter-spacing: -0.025em !important;
-    font-kerning: normal !important;
-    text-rendering: geometricPrecision;
-  }
+  .header-brand {
+    min-width: 0;
+    width: max-content;
+    max-width: calc(100% - 8px);
+    display: inline-block;
+    overflow: visible;
+    padding: 3px 8px 4px 0;
 
-  /*
-   * Ondersteunt ook de header.liquid-versie met een apart tekst-element.
-   */
-  .site-header__logo-text,
-  .site-header__mobile-bar .site-header__logo-text {
-    min-width: 0 !important;
-    width: max-content !important;
-    max-width: 100% !important;
-    display: block !important;
-    overflow: visible !important;
-    text-overflow: clip !important;
-    white-space: nowrap !important;
-    padding-right: 0.35em !important;
-    font-family: var(--dk-heading) !important;
-    font-size: inherit !important;
-    font-weight: 900 !important;
-    line-height: 1.24 !important;
-    letter-spacing: -0.025em !important;
-  }
+    /* Bewust geen Manrope op mobiel: dit geeft een duidelijkere letter g. */
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    font-style: normal;
+    font-variant: normal;
+    font-feature-settings: normal;
+    font-kerning: normal;
 
-  .menu-toggle,
-  .site-header__mobile-toggle {
-    width: 82px !important;
-    min-width: 82px !important;
+    line-height: 1.25;
+    letter-spacing: -0.045em;
+    white-space: nowrap;
+    text-overflow: clip;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
   }
 }
 
 @media (max-width: 420px) {
   .site-header__shell {
-    grid-template-columns: minmax(0, 1fr) 72px !important;
-    padding-left: 14px !important;
+    grid-template-columns: minmax(0, 1fr) 78px;
+    padding-left: 18px;
   }
 
-  .header-brand,
-  .site-header__mobile-bar .site-header__logo {
-    padding-right: 0.32em !important;
-    font-size: clamp(16px, 4.75vw, 19px) !important;
-    line-height: 1.25 !important;
-    letter-spacing: -0.02em !important;
-  }
-
-  .site-header__logo-text,
-  .site-header__mobile-bar .site-header__logo-text {
-    padding-right: 0.32em !important;
-    line-height: 1.25 !important;
-    letter-spacing: -0.02em !important;
-  }
-
-  .menu-toggle,
-  .site-header__mobile-toggle {
-    width: 72px !important;
-    min-width: 72px !important;
+  .header-brand {
+    max-width: calc(100% - 6px);
+    padding-right: 6px;
+    font-size: 20px;
+    line-height: 1.25;
+    letter-spacing: -0.04em;
   }
 }
 
 @media (max-width: 360px) {
   .site-header__shell {
-    grid-template-columns: minmax(0, 1fr) 66px !important;
-    padding-left: 12px !important;
+    grid-template-columns: minmax(0, 1fr) 72px;
+    padding-left: 14px;
   }
 
-  .header-brand,
-  .site-header__mobile-bar .site-header__logo {
-    font-size: 15.5px !important;
-    letter-spacing: -0.015em !important;
+  .header-brand {
+    font-size: 18px;
+    letter-spacing: -0.035em;
   }
 
-  .menu-toggle,
-  .site-header__mobile-toggle {
-    width: 66px !important;
-    min-width: 66px !important;
+  .menu-toggle {
+    width: 72px;
   }
 }
 

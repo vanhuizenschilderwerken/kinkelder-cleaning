@@ -41,7 +41,10 @@
 
   function initHeader() {
     var header = document.querySelector("[data-site-header]");
-    if (!header || header.dataset.navigationReady === "true") return;
+
+    if (!header || header.dataset.navigationReady === "true") {
+      return;
+    }
 
     var toggle = header.querySelector("[data-menu-toggle]");
     var nav = header.querySelector("[data-site-nav]");
@@ -62,6 +65,7 @@
 
       if (toggle) {
         toggle.setAttribute("aria-expanded", String(open));
+
         toggle.setAttribute(
           "aria-label",
           open ? "Menu sluiten" : "Menu openen"
@@ -97,12 +101,15 @@
           return;
         }
 
-        var active = normalizePath(target.pathname) === currentPath;
+        var active =
+          normalizePath(target.pathname) === currentPath;
 
         link.classList.toggle("is-active", active);
+
         link.classList.toggle(
           "is-current",
-          active && link.classList.contains("site-nav__cta")
+          active &&
+            link.classList.contains("site-nav__cta")
         );
 
         if (active) {
@@ -157,7 +164,10 @@
       if (!isMobile()) {
         setMenu(false);
       } else if (nav) {
-        nav.setAttribute("aria-hidden", String(!isOpen()));
+        nav.setAttribute(
+          "aria-hidden",
+          String(!isOpen())
+        );
       }
     });
 
@@ -180,24 +190,35 @@
 
   function initRailButtons() {
     document
-      .querySelectorAll("[data-rail-prev], [data-rail-next]")
+      .querySelectorAll(
+        "[data-rail-prev], [data-rail-next]"
+      )
       .forEach(function (button) {
-        if (button.dataset.railReady === "true") return;
+        if (button.dataset.railReady === "true") {
+          return;
+        }
 
         button.addEventListener("click", function () {
           var wrap = button.closest(".rail-wrap");
+
           var rail = wrap
             ? wrap.querySelector("[data-rail]")
             : null;
 
-          if (!rail) return;
+          if (!rail) {
+            return;
+          }
 
-          var direction = button.hasAttribute("data-rail-prev")
-            ? -1
-            : 1;
+          var direction =
+            button.hasAttribute("data-rail-prev")
+              ? -1
+              : 1;
 
           rail.scrollBy({
-            left: direction * rail.clientWidth * 0.82,
+            left:
+              direction *
+              rail.clientWidth *
+              0.82,
             behavior: "smooth"
           });
         });
@@ -207,10 +228,17 @@
   }
 
   function initProjectCount() {
-    var grid = document.querySelector("[data-project-grid]");
-    var countNode = document.querySelector("[data-project-count]");
+    var grid = document.querySelector(
+      "[data-project-grid]"
+    );
 
-    if (!grid || !countNode) return;
+    var countNode = document.querySelector(
+      "[data-project-count]"
+    );
+
+    if (!grid || !countNode) {
+      return;
+    }
 
     var amount = grid.querySelectorAll(
       "[data-project-card]"
@@ -225,66 +253,92 @@
 
   function initFaq() {
     document
-      .querySelectorAll("[data-contact-faq] details")
+      .querySelectorAll(
+        "[data-contact-faq] details"
+      )
       .forEach(function (item) {
-        item.addEventListener("toggle", function () {
-          if (!item.open) return;
+        item.addEventListener(
+          "toggle",
+          function () {
+            if (!item.open) {
+              return;
+            }
 
-          document
-            .querySelectorAll("[data-contact-faq] details")
-            .forEach(function (other) {
-              if (other !== item) {
-                other.open = false;
-              }
-            });
-        });
+            document
+              .querySelectorAll(
+                "[data-contact-faq] details"
+              )
+              .forEach(function (other) {
+                if (other !== item) {
+                  other.open = false;
+                }
+              });
+          }
+        );
       });
   }
 
   function initQuoteForm() {
-    var form = document.querySelector("[data-offerte-form]");
+    var form = document.querySelector(
+      "[data-offerte-form]"
+    );
 
-    if (!form || form.dataset.quoteReady === "true") {
+    if (
+      !form ||
+      form.dataset.quoteReady === "true"
+    ) {
       return;
     }
 
-    var serviceInputs = Array.prototype.slice.call(
-      form.querySelectorAll('[name="dienst[]"]')
-    );
-
-    var serviceFeedback = form.querySelector(
-      "[data-service-feedback]"
-    );
-
-    var clientInputs = Array.prototype.slice.call(
-      form.querySelectorAll(
-        'input[name="opdrachtgever"]'
-      )
-    );
-
-    var companyField = form.querySelector(
-      "[data-company-field]"
-    );
-
-    var companyInput = form.querySelector(
-      "[data-company-input]"
-    );
-
-    var submitButton = form.querySelector(
-      'button[type="submit"]'
-    );
-
-    function selectedClientType() {
-      var selected = form.querySelector(
-        'input[name="opdrachtgever"]:checked'
+    var serviceInputs =
+      Array.prototype.slice.call(
+        form.querySelectorAll(
+          '[name="dienst[]"]'
+        )
       );
 
-      return selected ? selected.value : "particulier";
+    var serviceFeedback =
+      form.querySelector(
+        "[data-service-feedback]"
+      );
+
+    var clientInputs =
+      Array.prototype.slice.call(
+        form.querySelectorAll(
+          'input[name="opdrachtgever"]'
+        )
+      );
+
+    var companyField =
+      form.querySelector(
+        "[data-company-field]"
+      );
+
+    var companyInput =
+      form.querySelector(
+        "[data-company-input]"
+      );
+
+    var submitButton =
+      form.querySelector(
+        'button[type="submit"]'
+      );
+
+    function selectedClientType() {
+      var selected =
+        form.querySelector(
+          'input[name="opdrachtgever"]:checked'
+        );
+
+      return selected
+        ? selected.value
+        : "particulier";
     }
 
     function updateCompanyField() {
       var required =
-        selectedClientType() !== "particulier";
+        selectedClientType() !==
+        "particulier";
 
       if (companyField) {
         companyField.hidden = !required;
@@ -293,6 +347,7 @@
       if (companyInput) {
         companyInput.required = required;
         companyInput.disabled = !required;
+
         companyInput.setAttribute(
           "aria-required",
           String(required)
@@ -301,52 +356,72 @@
     }
 
     function hasSelectedService() {
-      return serviceInputs.some(function (input) {
-        return input.checked;
-      });
+      return serviceInputs.some(
+        function (input) {
+          return input.checked;
+        }
+      );
     }
 
-    function updateServiceFeedback(showError) {
-      var valid = hasSelectedService();
+    function updateServiceFeedback(
+      showError
+    ) {
+      var valid =
+        hasSelectedService();
 
       if (serviceFeedback) {
-        serviceFeedback.hidden = valid || !showError;
+        serviceFeedback.hidden =
+          valid || !showError;
 
-        serviceFeedback.textContent = valid
-          ? ""
-          : "Selecteer minimaal één dienst voordat u het formulier verstuurt.";
+        serviceFeedback.textContent =
+          valid
+            ? ""
+            : "Selecteer minimaal één dienst voordat u het formulier verstuurt.";
       }
 
-      serviceInputs.forEach(function (input) {
-        input.setAttribute(
-          "aria-invalid",
-          String(!valid && showError)
-        );
-      });
+      serviceInputs.forEach(
+        function (input) {
+          input.setAttribute(
+            "aria-invalid",
+            String(
+              !valid &&
+                showError
+            )
+          );
+        }
+      );
 
       return valid;
     }
 
     function prefillFromQuery() {
-      var params = new URLSearchParams(
-        window.location.search
-      );
+      var params =
+        new URLSearchParams(
+          window.location.search
+        );
 
-      var service = params.get("dienst");
-      var locationValue = params.get("locatie");
-      var phone = params.get("telefoon");
+      var service =
+        params.get("dienst");
+
+      var locationValue =
+        params.get("locatie");
+
+      var phone =
+        params.get("telefoon");
 
       if (service) {
-        var safeService = String(service).replace(
-          /["\\]/g,
-          "\\$&"
-        );
+        var safeService =
+          String(service).replace(
+            /["\\]/g,
+            "\\$&"
+          );
 
-        var serviceInput = form.querySelector(
-          '[name="dienst[]"][value="' +
-            safeService +
-            '"]'
-        );
+        var serviceInput =
+          form.querySelector(
+            '[name="dienst[]"][value="' +
+              safeService +
+              '"]'
+          );
 
         if (serviceInput) {
           serviceInput.checked = true;
@@ -354,13 +429,15 @@
       }
 
       if (locationValue) {
-        var postcode = form.querySelector(
-          "[data-quote-location]"
-        );
+        var postcode =
+          form.querySelector(
+            "[data-quote-location]"
+          );
 
-        var place = form.querySelector(
-          'input[name="plaats"]'
-        );
+        var place =
+          form.querySelector(
+            'input[name="plaats"]'
+          );
 
         if (
           /^\d{4}\s?[a-z]{2}$/i.test(
@@ -368,131 +445,299 @@
           )
         ) {
           if (postcode) {
-            postcode.value = locationValue;
+            postcode.value =
+              locationValue;
           }
         } else if (place) {
-          place.value = locationValue;
+          place.value =
+            locationValue;
         }
       }
 
       if (phone) {
-        var phoneInput = form.querySelector(
-          'input[name="telefoon"]'
-        );
+        var phoneInput =
+          form.querySelector(
+            'input[name="telefoon"]'
+          );
 
         if (phoneInput) {
-          phoneInput.value = phone;
+          phoneInput.value =
+            phone;
         }
       }
     }
 
     function showSuccessMessage() {
-      var params = new URLSearchParams(
-        window.location.search
-      );
+      var params =
+        new URLSearchParams(
+          window.location.search
+        );
 
-      if (params.get("verzonden") !== "1") {
+      if (
+        params.get("verzonden") !==
+        "1"
+      ) {
         return;
       }
 
-      var message = document.createElement("div");
+      var message =
+        document.createElement(
+          "div"
+        );
 
-      message.className = "policy-notice";
-      message.setAttribute("role", "status");
-      message.setAttribute("aria-live", "polite");
+      message.className =
+        "policy-notice";
+
+      message.setAttribute(
+        "role",
+        "status"
+      );
+
+      message.setAttribute(
+        "aria-live",
+        "polite"
+      );
 
       message.innerHTML =
         "<strong>Uw offerteaanvraag is verstuurd.</strong>" +
         "<p>Bedankt. De Kinkelder Cleaning neemt zo snel mogelijk contact met u op.</p>";
 
-      form.parentNode.insertBefore(message, form);
+      form.parentNode.insertBefore(
+        message,
+        form
+      );
     }
 
-    clientInputs.forEach(function (input) {
-      input.addEventListener(
-        "change",
-        updateCompanyField
-      );
-    });
+    clientInputs.forEach(
+      function (input) {
+        input.addEventListener(
+          "change",
+          updateCompanyField
+        );
+      }
+    );
 
-    serviceInputs.forEach(function (input) {
-      input.addEventListener("change", function () {
-        updateServiceFeedback(false);
-      });
-    });
+    serviceInputs.forEach(
+      function (input) {
+        input.addEventListener(
+          "change",
+          function () {
+            updateServiceFeedback(
+              false
+            );
+          }
+        );
+      }
+    );
 
-    form.addEventListener("submit", function (event) {
-      if (!updateServiceFeedback(true)) {
+    form.addEventListener(
+      "submit",
+      async function (event) {
         event.preventDefault();
 
-        if (serviceInputs[0]) {
-          serviceInputs[0].focus();
+        if (
+          !updateServiceFeedback(
+            true
+          )
+        ) {
+          if (
+            serviceInputs[0]
+          ) {
+            serviceInputs[0].focus();
+          }
+
+          return;
         }
 
-        return;
-      }
+        if (
+          !form.reportValidity()
+        ) {
+          return;
+        }
 
-      if (!form.reportValidity()) {
-        event.preventDefault();
-        return;
-      }
+        if (!submitButton) {
+          return;
+        }
 
-      /*
-       * Bij een geldige aanvraag wordt preventDefault()
-       * niet gebruikt. Het formulier wordt rechtstreeks
-       * naar FormSubmit verstuurd.
-       */
-      if (submitButton) {
         var label =
-          submitButton.querySelector("span");
+          submitButton.querySelector(
+            "span"
+          );
+
+        var originalText =
+          label
+            ? label.textContent
+            : submitButton.textContent;
+
+        var formData =
+          new FormData(form);
+
+        /*
+         * Web3Forms Access Key
+         */
+        formData.set(
+          "access_key",
+          "632cedec-5574-4c86-ae0e-1483cef3715b"
+        );
+
+        /*
+         * Onderwerp van de e-mail
+         */
+        formData.set(
+          "subject",
+          "Nieuwe aanvraag via De Kinkelder Cleaning"
+        );
 
         if (label) {
           label.textContent =
             "Aanvraag wordt verstuurd...";
+        } else {
+          submitButton.textContent =
+            "Aanvraag wordt verstuurd...";
         }
+
+        submitButton.disabled =
+          true;
 
         submitButton.setAttribute(
           "aria-busy",
           "true"
         );
+
+        try {
+          var response =
+            await fetch(
+              "https://api.web3forms.com/submit",
+              {
+                method: "POST",
+                body: formData
+              }
+            );
+
+          var data =
+            await response.json();
+
+          if (
+            !response.ok ||
+            !data.success
+          ) {
+            throw new Error(
+              data.message ||
+                "Er ging iets mis bij het verzenden."
+            );
+          }
+
+          if (label) {
+            label.textContent =
+              "Verzonden ✓";
+          } else {
+            submitButton.textContent =
+              "Verzonden ✓";
+          }
+
+          form.reset();
+
+          updateCompanyField();
+          updateServiceFeedback(false);
+
+          window.setTimeout(
+            function () {
+              if (label) {
+                label.textContent =
+                  originalText;
+              } else {
+                submitButton.textContent =
+                  originalText;
+              }
+
+              submitButton.disabled =
+                false;
+
+              submitButton.removeAttribute(
+                "aria-busy"
+              );
+            },
+            2500
+          );
+        } catch (error) {
+          console.error(
+            "Web3Forms fout:",
+            error
+          );
+
+          alert(
+            "Kon het formulier niet verzenden. " +
+              (error.message ||
+                "Controleer uw verbinding.")
+          );
+
+          if (label) {
+            label.textContent =
+              originalText;
+          } else {
+            submitButton.textContent =
+              originalText;
+          }
+
+          submitButton.disabled =
+            false;
+
+          submitButton.removeAttribute(
+            "aria-busy"
+          );
+        }
       }
-    });
+    );
 
     prefillFromQuery();
     updateCompanyField();
     updateServiceFeedback(false);
     showSuccessMessage();
 
-    form.dataset.quoteReady = "true";
+    form.dataset.quoteReady =
+      "true";
   }
 
   function initFileUpload() {
     document
-      .querySelectorAll("[data-file-field]")
+      .querySelectorAll(
+        "[data-file-field]"
+      )
       .forEach(function (field) {
-        if (field.dataset.fileReady === "true") {
+        if (
+          field.dataset.fileReady ===
+          "true"
+        ) {
           return;
         }
 
-        var input = field.querySelector(
-          "[data-file-input]"
-        );
+        var input =
+          field.querySelector(
+            "[data-file-input]"
+          );
 
-        var preview = field.querySelector(
-          "[data-file-preview]"
-        );
+        var preview =
+          field.querySelector(
+            "[data-file-preview]"
+          );
 
-        var feedback = field.querySelector(
-          "[data-file-feedback]"
-        );
+        var feedback =
+          field.querySelector(
+            "[data-file-feedback]"
+          );
 
-        if (!input || !preview || !feedback) {
+        if (
+          !input ||
+          !preview ||
+          !feedback
+        ) {
           return;
         }
 
-        var selectedFiles = Array.prototype.slice.call(
-          input.files || []
-        );
+        var selectedFiles =
+          Array.prototype.slice.call(
+            input.files || []
+          );
 
         function fileKey(file) {
           return [
@@ -503,116 +748,184 @@
         }
 
         function syncInput() {
-          if (typeof DataTransfer === "undefined") {
+          if (
+            typeof DataTransfer ===
+            "undefined"
+          ) {
             return;
           }
 
-          var transfer = new DataTransfer();
+          var transfer =
+            new DataTransfer();
 
-          selectedFiles.forEach(function (file) {
-            transfer.items.add(file);
-          });
+          selectedFiles.forEach(
+            function (file) {
+              transfer.items.add(
+                file
+              );
+            }
+          );
 
-          input.files = transfer.files;
+          input.files =
+            transfer.files;
         }
 
         function totalSize(files) {
-          return files.reduce(function (sum, file) {
-            return sum + file.size;
-          }, 0);
+          return files.reduce(
+            function (
+              sum,
+              file
+            ) {
+              return (
+                sum +
+                file.size
+              );
+            },
+            0
+          );
         }
 
-        function showFeedback(message) {
-          feedback.textContent = message || "";
-          feedback.hidden = !message;
+        function showFeedback(
+          message
+        ) {
+          feedback.textContent =
+            message || "";
+
+          feedback.hidden =
+            !message;
         }
 
-        function removeFile(index) {
-          selectedFiles.splice(index, 1);
+        function removeFile(
+          index
+        ) {
+          selectedFiles.splice(
+            index,
+            1
+          );
 
           syncInput();
           render();
+
           showFeedback("");
         }
 
         function render() {
           preview.replaceChildren();
+
           preview.hidden =
-            selectedFiles.length === 0;
+            selectedFiles.length ===
+            0;
 
-          selectedFiles.forEach(function (
-            file,
-            index
-          ) {
-            var figure =
-              document.createElement("figure");
+          selectedFiles.forEach(
+            function (
+              file,
+              index
+            ) {
+              var figure =
+                document.createElement(
+                  "figure"
+                );
 
-            var image =
-              document.createElement("img");
+              var image =
+                document.createElement(
+                  "img"
+                );
 
-            var caption =
-              document.createElement("figcaption");
+              var caption =
+                document.createElement(
+                  "figcaption"
+                );
 
-            var removeButton =
-              document.createElement("button");
+              var removeButton =
+                document.createElement(
+                  "button"
+                );
 
-            var objectUrl =
-              URL.createObjectURL(file);
+              var objectUrl =
+                URL.createObjectURL(
+                  file
+                );
 
-            figure.className =
-              "contact-file-preview";
+              figure.className =
+                "contact-file-preview";
 
-            image.src = objectUrl;
-            image.alt =
-              "Voorbeeld van " + file.name;
-            image.loading = "lazy";
+              image.src =
+                objectUrl;
 
-            image.addEventListener(
-              "load",
-              function () {
-                URL.revokeObjectURL(objectUrl);
-              },
-              { once: true }
-            );
+              image.alt =
+                "Voorbeeld van " +
+                file.name;
 
-            image.addEventListener(
-              "error",
-              function () {
-                URL.revokeObjectURL(objectUrl);
-              },
-              { once: true }
-            );
+              image.loading =
+                "lazy";
 
-            caption.className =
-              "contact-file-preview__name";
+              image.addEventListener(
+                "load",
+                function () {
+                  URL.revokeObjectURL(
+                    objectUrl
+                  );
+                },
+                { once: true }
+              );
 
-            caption.textContent = file.name;
+              image.addEventListener(
+                "error",
+                function () {
+                  URL.revokeObjectURL(
+                    objectUrl
+                  );
+                },
+                { once: true }
+              );
 
-            removeButton.type = "button";
+              caption.className =
+                "contact-file-preview__name";
 
-            removeButton.className =
-              "contact-file-preview__remove";
+              caption.textContent =
+                file.name;
 
-            removeButton.setAttribute(
-              "aria-label",
-              "Verwijder " + file.name
-            );
+              removeButton.type =
+                "button";
 
-            removeButton.textContent = "×";
+              removeButton.className =
+                "contact-file-preview__remove";
 
-            removeButton.addEventListener(
-              "click",
-              function () {
-                removeFile(index);
-              }
-            );
+              removeButton.setAttribute(
+                "aria-label",
+                "Verwijder " +
+                  file.name
+              );
 
-            figure.appendChild(image);
-            figure.appendChild(caption);
-            figure.appendChild(removeButton);
+              removeButton.textContent =
+                "×";
 
-            preview.appendChild(figure);
-          });
+              removeButton.addEventListener(
+                "click",
+                function () {
+                  removeFile(
+                    index
+                  );
+                }
+              );
+
+              figure.appendChild(
+                image
+              );
+
+              figure.appendChild(
+                caption
+              );
+
+              figure.appendChild(
+                removeButton
+              );
+
+              preview.appendChild(
+                figure
+              );
+            }
+          );
         }
 
         input.addEventListener(
@@ -623,71 +936,102 @@
                 input.files || []
               );
 
-            var known = new Set(
-              selectedFiles.map(fileKey)
-            );
+            var known =
+              new Set(
+                selectedFiles.map(
+                  fileKey
+                )
+              );
 
             var candidates =
               selectedFiles.slice();
 
-            var errorMessage = "";
+            var errorMessage =
+              "";
 
-            incoming.forEach(function (file) {
-              if (
-                !/^image\/(?:jpeg|png|webp)$/i.test(
-                  file.type
-                )
-              ) {
-                errorMessage =
-                  "Gebruik alleen JPG-, PNG- of WebP-afbeeldingen.";
+            incoming.forEach(
+              function (file) {
+                if (
+                  !/^image\/(?:jpeg|png|webp)$/i.test(
+                    file.type
+                  )
+                ) {
+                  errorMessage =
+                    "Gebruik alleen JPG-, PNG- of WebP-afbeeldingen.";
 
-                return;
+                  return;
+                }
+
+                var key =
+                  fileKey(file);
+
+                if (
+                  !known.has(key)
+                ) {
+                  candidates.push(
+                    file
+                  );
+
+                  known.add(key);
+                }
               }
-
-              var key = fileKey(file);
-
-              if (!known.has(key)) {
-                candidates.push(file);
-                known.add(key);
-              }
-            });
+            );
 
             if (
-              totalSize(candidates) >
+              totalSize(
+                candidates
+              ) >
               MAX_UPLOAD_TOTAL
             ) {
               errorMessage =
                 "De totale bestandsgrootte mag maximaal 10 MB zijn.";
-            } else if (!errorMessage) {
-              selectedFiles = candidates;
+            } else if (
+              !errorMessage
+            ) {
+              selectedFiles =
+                candidates;
             }
 
             syncInput();
             render();
-            showFeedback(errorMessage);
+
+            showFeedback(
+              errorMessage
+            );
           }
         );
 
-        var form = field.closest("form");
+        var form =
+          field.closest(
+            "form"
+          );
 
         if (form) {
           form.addEventListener(
             "reset",
             function () {
-              window.setTimeout(function () {
-                selectedFiles = [];
+              window.setTimeout(
+                function () {
+                  selectedFiles =
+                    [];
 
-                syncInput();
-                render();
-                showFeedback("");
-              }, 0);
+                  syncInput();
+                  render();
+
+                  showFeedback(
+                    ""
+                  );
+                },
+                0
+              );
             }
           );
         }
 
         render();
 
-        field.dataset.fileReady = "true";
+        field.dataset.fileReady =
+          "true";
       });
   }
 
@@ -701,78 +1045,3 @@
     initFileUpload();
   });
 })();
-
-// --- Gecombineerde Web3Forms Sectie ---
-
-const form =
-  document.querySelector(".quote-form") ||
-  document.getElementById("form");
-
-if (form) {
-  form.addEventListener("submit", async (e) => {
-    e.preventDefault();
-
-    const submitBtn = form.querySelector("button[type='submit']");
-    if (!submitBtn) return;
-
-    const originalText = submitBtn.textContent;
-
-    const formData = new FormData(form);
-
-    // Web3Forms Access Key
-    formData.append(
-      "access_key",
-      "632cedec-5574-4c86-ae0e-1483cef3715b"
-    );
-
-    // Onderwerp van de e-mail
-    formData.append(
-      "subject",
-      "Nieuwe aanvraag via De Kinkelder Cleaning"
-    );
-
-    // Start verzenden
-    submitBtn.textContent = "Bezig met verzenden...";
-    submitBtn.disabled = true;
-
-    try {
-      const response = await fetch(
-        "https://api.web3forms.com/submit",
-        {
-          method: "POST",
-          body: formData
-        }
-      );
-
-      const data = await response.json();
-
-      if (response.ok && data.success) {
-        submitBtn.textContent = "Verzonden ✓";
-
-        form.reset();
-
-        setTimeout(() => {
-          submitBtn.textContent = originalText;
-          submitBtn.disabled = false;
-        }, 2500);
-      } else {
-        alert(
-          "Fout: " +
-          (data.message || "Er ging iets mis bij het verzenden.")
-        );
-
-        submitBtn.textContent = originalText;
-        submitBtn.disabled = false;
-      }
-    } catch (error) {
-      console.error("Web3Forms fout:", error);
-
-      alert(
-        "Kon het formulier niet verzenden. Controleer uw verbinding."
-      );
-
-      submitBtn.textContent = originalText;
-      submitBtn.disabled = false;
-    }
-  });
-}

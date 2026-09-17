@@ -702,54 +702,77 @@
   });
 })();
 
-  // --- Gecombineerde Web3Forms Sectie ---
-  // Zoekt naar zowel .quote-form als #form
-  const form = document.querySelector(".quote-form") || document.getElementById('form');
-  
-  if (form) {
-    form.addEventListener("submit", async (e) => {
-      e.preventDefault();
-      
-      const submitBtn = form.querySelector("button[type='submit']");
-      if (!submitBtn) return;
+// --- Gecombineerde Web3Forms Sectie ---
 
-      const originalText = submitBtn.textContent;
-      const formData = new FormData(form);
-      
-      // Access Key uit afbeelding verwerkt
-      formData.append("access_key", "632cedec-5574-4c86-ae0e-1483cef3715b");
+const form =
+  document.querySelector(".quote-form") ||
+  document.getElementById("form");
 
-      // Visuele feedback start
-      submitBtn.textContent = "Bezig met verzenden...";
-      submitBtn.disabled = true;
+if (form) {
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
 
-      try {
-        const response = await fetch("https://api.web3forms.com/submit", {
+    const submitBtn = form.querySelector("button[type='submit']");
+    if (!submitBtn) return;
+
+    const originalText = submitBtn.textContent;
+
+    const formData = new FormData(form);
+
+    // Web3Forms Access Key
+    formData.append(
+      "access_key",
+      "632cedec-5574-4c86-ae0e-1483cef3715b"
+    );
+
+    // Onderwerp van de e-mail
+    formData.append(
+      "subject",
+      "Nieuwe aanvraag via De Kinkelder Cleaning"
+    );
+
+    // Start verzenden
+    submitBtn.textContent = "Bezig met verzenden...";
+    submitBtn.disabled = true;
+
+    try {
+      const response = await fetch(
+        "https://api.web3forms.com/submit",
+        {
           method: "POST",
           body: formData
-        });
+        }
+      );
 
-        const data = await response.json();
+      const data = await response.json();
 
-        if (response.ok && data.success) {
-          // Succes status
-          submitBtn.textContent = "Verzonden ✓";
-          form.reset();
-          
-          setTimeout(() => {
-            submitBtn.textContent = originalText;
-            submitBtn.disabled = false;
-          }, 2500);
-        } else {
-          alert("Fout: " + (data.message || "Er ging iets mis."));
+      if (response.ok && data.success) {
+        submitBtn.textContent = "Verzonden ✓";
+
+        form.reset();
+
+        setTimeout(() => {
           submitBtn.textContent = originalText;
           submitBtn.disabled = false;
-        }
-      } catch (error) {
-        alert("Kon het formulier niet verzenden. Controleer uw verbinding.");
+        }, 2500);
+      } else {
+        alert(
+          "Fout: " +
+          (data.message || "Er ging iets mis bij het verzenden.")
+        );
+
         submitBtn.textContent = originalText;
         submitBtn.disabled = false;
       }
-    });
-  }
-})();
+    } catch (error) {
+      console.error("Web3Forms fout:", error);
+
+      alert(
+        "Kon het formulier niet verzenden. Controleer uw verbinding."
+      );
+
+      submitBtn.textContent = originalText;
+      submitBtn.disabled = false;
+    }
+  });
+}

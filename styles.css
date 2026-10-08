@@ -1479,7 +1479,7 @@ footer[id] {
   }
 
   .header-brand {
-    font-size: 18px;
+    font-size: 21px;
   }
 
   .site-nav {
@@ -9655,97 +9655,142 @@ body.contact-page .contact-trust-strip__inner:not(.is-marquee-ready) {
 }
 
 /* =========================================================
-   FIX OFFERTEPAGINA — MOBIELE HERO-KNOP
-   De witte ronde pijl staat volledig rechts, gelijk aan de
-   knop "Offerteaanvraag versturen".
+   HOMEPAGE - UITGEBREID KORT OFFERTEFORMULIER
    ========================================================= */
-@media (max-width: 760px) {
-  .quote-page .quote-hero__copy > .button--quote {
-    width: 100%;
-    max-width: none;
-    display: inline-flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 16px;
-    padding: 6px 8px 6px 28px;
+
+.quote-card.quote-card--extended {
+  width: min(470px, 96%);
+  padding: 24px;
+}
+
+.quote-card.quote-card--extended h2 {
+  margin-bottom: 15px;
+}
+
+.quote-form--extended {
+  gap: 10px;
+}
+
+.quote-form--extended .quote-form__row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.quote-form--extended .quote-form__row--address {
+  grid-template-columns: minmax(0, 1fr) minmax(100px, 0.38fr);
+}
+
+.quote-form--extended .quote-form__row--location {
+  grid-template-columns: minmax(130px, 0.52fr) minmax(0, 1fr);
+}
+
+.quote-form--extended label {
+  min-width: 0;
+}
+
+.quote-form--extended label > span:first-child {
+  display: inline-block;
+}
+
+.quote-form__required {
+  color: var(--dk-blue-mid);
+  font-weight: 900;
+}
+
+.quote-form--extended input,
+.quote-form--extended select {
+  min-height: 46px;
+}
+
+.quote-form--extended input::placeholder {
+  color: rgba(21, 21, 21, 0.48);
+}
+
+.quote-form--extended input:focus,
+.quote-form--extended select:focus {
+  border-color: var(--dk-blue);
+  outline: 3px solid rgba(0, 163, 224, 0.14);
+  outline-offset: 1px;
+}
+
+.quote-form--extended .button {
+  width: 100%;
+  min-height: 54px;
+  margin-top: 2px;
+}
+
+.quote-form--extended .quote-form__note {
+  margin-top: 2px;
+  color: rgba(21, 21, 21, 0.62);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+@media (min-width: 1181px) {
+  .hero-visual {
+    min-height: 650px;
   }
 
-  .quote-page .quote-hero__copy > .button--quote .button__icon {
-    width: 50px;
-    height: 50px;
-    flex: 0 0 50px;
-    margin-left: auto;
+  .hero-visual .photo-card--hero {
+    min-height: 520px;
+  }
+
+  .quote-card.quote-card--extended {
+    right: -18px;
+    bottom: -40px;
   }
 }
 
-/* =========================================================
-   DEFINITIEVE MOBIELE HEADERFIX
-   De eerdere fout zat niet in de beschikbare breedte, maar in
-   de Manrope-vorm van de kleine letter "g" op mobiel.
-   Alleen de mobiele merknaam gebruikt daarom een duidelijkere
-   systeemletter met een normale, volledig zichtbare g.
-   ========================================================= */
+@media (max-width: 1180px) {
+  .quote-card.quote-card--extended {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    width: 100%;
+    max-width: 620px;
+    margin: 16px auto 0;
+  }
+}
 
-@media (max-width: 900px) {
-  .site-header__shell {
-    grid-template-columns: minmax(0, 1fr) 88px;
-    padding-left: 24px;
+@media (max-width: 760px) {
+  .quote-card.quote-card--extended {
+    width: 100%;
+    max-width: none;
+    padding: 18px;
   }
 
-  .header-brand {
-    min-width: 0;
-    width: max-content;
-    max-width: calc(100% - 8px);
-    display: inline-block;
-    overflow: visible;
-    padding: 3px 8px 4px 0;
-
-    /* Bewust geen Manrope op mobiel: dit geeft een duidelijkere letter g. */
-    font-family: Arial, Helvetica, sans-serif;
+  .quote-card.quote-card--extended h2 {
     font-size: 22px;
-    font-weight: 700;
-    font-style: normal;
-    font-variant: normal;
-    font-feature-settings: normal;
-    font-kerning: normal;
+    line-height: 1.12;
+  }
 
-    line-height: 1.25;
-    letter-spacing: -0.045em;
-    white-space: nowrap;
-    text-overflow: clip;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
+  .quote-form--extended {
+    gap: 11px;
+  }
+
+  .quote-form--extended .quote-form__row,
+  .quote-form--extended .quote-form__row--address,
+  .quote-form--extended .quote-form__row--location {
+    grid-template-columns: 1fr;
+    gap: 11px;
+  }
+
+  .quote-form--extended input,
+  .quote-form--extended select {
+    min-height: 50px;
+    font-size: 16px;
+  }
+
+  .quote-form--extended .button {
+    min-height: 56px;
+    font-size: 16px;
   }
 }
 
 @media (max-width: 420px) {
-  .site-header__shell {
-    grid-template-columns: minmax(0, 1fr) 78px;
-    padding-left: 18px;
-  }
-
-  .header-brand {
-    max-width: calc(100% - 6px);
-    padding-right: 6px;
-    font-size: 20px;
-    line-height: 1.25;
-    letter-spacing: -0.04em;
-  }
-}
-
-@media (max-width: 360px) {
-  .site-header__shell {
-    grid-template-columns: minmax(0, 1fr) 72px;
-    padding-left: 14px;
-  }
-
-  .header-brand {
-    font-size: 18px;
-    letter-spacing: -0.035em;
-  }
-
-  .menu-toggle {
-    width: 72px;
+  .quote-card.quote-card--extended {
+    padding: 16px;
   }
 }
 
